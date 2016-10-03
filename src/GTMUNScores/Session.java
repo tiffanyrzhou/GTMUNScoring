@@ -14,6 +14,7 @@ public class Session {
     String[] bestInvolvement = new String[10];
     TreeMap<String, Integer> top = new TreeMap<>();
 
+
     public Session (String bestInput) {
         String[] input = bestInput.split(",");
         name = input[0];
@@ -56,6 +57,7 @@ public class Session {
 
     @Override
     public String toString() {
+
         return this.name;
     }
     public String[] getBestSpeeches(){
