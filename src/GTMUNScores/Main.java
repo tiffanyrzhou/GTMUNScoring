@@ -44,7 +44,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Group root = new Group();
-        Label status = new Label("Welcome to GTMUN 2016 Scoring Application");
+        Label status = new Label("Welcome to GTMUN Scoring Application");
         status.setFont(new Font(20));
         Button buttonLoad = new Button("Upload File");
         buttonLoad.setOnAction(new EventHandler<ActionEvent>() {
