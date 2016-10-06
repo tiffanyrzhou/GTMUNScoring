@@ -97,7 +97,6 @@ public class Main extends Application {
                 }
             //ScoringController controller = loader.getController();
             controller.setMainApp(this);
-            controller.foo();
             controller.initialize(scoresFile);
             // Set the cleanWaterApp App title
             mainScreen.setTitle("Scores");
