@@ -53,6 +53,10 @@ public class ScoringController {
         this.scoresFile = file;
     }
 
+    public void foo() {
+        System.out.println("foo");
+    }
+
     public void setScoringAlgorithm(ScoringAlgorithm scoringAlgorithm) {
         this.scoringAlgorithm = scoringAlgorithm;
     }
@@ -78,7 +82,8 @@ public class ScoringController {
     }
 
     @FXML
-    public void initialize() throws FileNotFoundException {
+    public void initialize(File scores) throws FileNotFoundException {
+        scoringAlgorithm = new ScoringAlgorithm(scores);
         populateListView(getObservableList(generateList()));
     }
 

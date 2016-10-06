@@ -5,6 +5,7 @@ import GTMUNScores.Controller.ScoringController;
 import GTMUNScores.Model.ScoringAlgorithm;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
@@ -30,6 +31,8 @@ public class Main extends Application {
 
     /** the main layout for the main window */
     private AnchorPane rootLayout;
+
+    private AnchorPane layout;
 
     private ScoringAlgorithm scoringAlgorithm;
 
@@ -83,13 +86,19 @@ public class Main extends Application {
         try {
 
             // Load root layout from fxml file.
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("../view/ScoreView.fxml"));
-            AnchorPane layout = loader.load();
-
-            ScoringController controller = loader.getController();
-            controller.setFile(scoresFile);
-            controller.initialize();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/ScoreView.fxml"));
+            //loader.setLocation(Main.class.getResource("../view/ScoreView.fxml"));
+            ScoringController controller = new ScoringController();
+            loader.setController(controller);
+            layout = null;
+            try {
+                layout = loader.load();
+            }catch(IOException e){
+                }
+            //ScoringController controller = loader.getController();
+            controller.setMainApp(this);
+            controller.foo();
+            controller.initialize(scoresFile);
             // Set the cleanWaterApp App title
             mainScreen.setTitle("Scores");
 

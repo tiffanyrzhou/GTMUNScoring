@@ -23,6 +23,9 @@ public class ScoringAlgorithm {
     }
 
     public void score() throws FileNotFoundException{
+        if (scores == null){
+            System.out.print("null");
+        }
         Scanner fileReader = new Scanner(scores);
         fileReader.nextLine();
         while (fileReader.hasNextLine()) {
