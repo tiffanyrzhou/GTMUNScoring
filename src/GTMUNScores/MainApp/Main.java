@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -32,7 +33,7 @@ public class Main extends Application {
     /** the main layout for the main window */
     private AnchorPane rootLayout;
 
-    private AnchorPane layout;
+    private BorderPane layout;
 
     private ScoringAlgorithm scoringAlgorithm;
 
@@ -50,6 +51,9 @@ public class Main extends Application {
         this.scoresFile = file;
     }
 
+    public Stage getMainScreen() {
+        return mainScreen;
+    }
 
 
     private void initRootLayout(Stage mainScreen) {
@@ -80,7 +84,7 @@ public class Main extends Application {
     }
 
     /**
-     * shows main screen
+     * shows score screen
      */
     public void showScoreScreen() {
         try {
@@ -106,6 +110,37 @@ public class Main extends Application {
             mainScreen.setScene(scene);
             mainScreen.show();
 
+
+        } catch (IOException e) {
+            //error on load, so log it
+            LOGGER.log(Level.SEVERE, "Failed to find the fxml file for WelcomeScreen!!");
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * shows main screen
+     */
+    public void showWelcomeScreen() {
+        try {
+
+            // Load root layout from fxml file.
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/GTMUNScores.fxml"));
+            //loader.setLocation(Main.class.getResource("../view/ScoreView.fxml"));
+            ScoringController controller = new ScoringController();
+            loader.setController(controller);
+            rootLayout = loader.load();
+
+            //ScoringController controller = loader.getController();
+            controller.setMainApp(this);
+            controller.initialize(scoresFile);
+            // Set the cleanWaterApp App title
+            mainScreen.setTitle("Scores");
+
+            // Show the scene containing the root layout.
+            Scene scene = new Scene(layout);
+            mainScreen.setScene(scene);
+            mainScreen.show();
 
         } catch (IOException e) {
             //error on load, so log it

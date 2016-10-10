@@ -53,10 +53,6 @@ public class ScoringController {
         this.scoresFile = file;
     }
 
-    public void foo() {
-        System.out.println("foo");
-    }
-
     public void setScoringAlgorithm(ScoringAlgorithm scoringAlgorithm) {
         this.scoringAlgorithm = scoringAlgorithm;
     }

@@ -5,8 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:controller = "GTMUNScores.Controller.MainScreenController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GTMUNScores.Controller.MainScreenController">
    <children>
       <Label fx:id="welcomeLabel" layoutX="109.0" layoutY="14.0" text="Welcome to GTMUN Scoring">
          <font>
@@ -23,5 +22,10 @@
             <Font size="20.0" />
          </font>
       </Button>
+      <Label layoutX="248.0" layoutY="380.0" text="Created by: T. Zhou &amp; D. Tran">
+         <font>
+            <Font size="8.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
