@@ -8,13 +8,13 @@ import java.util.Scanner;
 /**
  * Created by Tiffany on 10/5/16.
  */
-public class FixingGlitch {
+public class ScoringAlgorithm {
     ArrayList<Session> sessions = new ArrayList<>();
     HashMap<String,ArrayList<Session>> Committee = new HashMap<>();
     ArrayList<GTMUNScores.Model.Committee> cCompiled = new ArrayList<>();
     File scores;
 
-    public FixingGlitch(File scores){
+    public ScoringAlgorithm(File scores){
         this.scores = scores;
     }
 
