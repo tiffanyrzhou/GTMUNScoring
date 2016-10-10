@@ -86,29 +86,43 @@ public class Session {
         return toString;
     }
     public void populateMap(String[] input) {
-        int counter = 10;
+        int scoreValue = 12;
+        int counter = 0;
         for (String s: input) {
             //System.out.print(s);
             if (top.containsKey(s)) {
-                top.put(s, top.get(s) + counter);
+                top.put(s, top.get(s) + scoreValue);
             } else {
-                top.put(s, counter);
+                top.put(s, scoreValue);
             }
-            counter--;
+            if(counter < 2){
+                scoreValue = scoreValue - 2;
 
+            } else {
+                scoreValue--;
+            }
+            counter++;
+            
         }
     }
 
     public void populateMap2(String[] input) {
-        int counter = 10;
+        int scoreValue = 5;
+        int counter = 0;
         for (String s: input) {
             //System.out.print(s);
             if (top.containsKey(s)) {
-                top.put(s, top.get(s) + counter);
+                top.put(s, top.get(s) + scoreValue);
             } else {
-                top.put(s, counter);
+                top.put(s, scoreValue);
             }
-            counter = counter/5;
+            if (counter == 0){
+                scoreValue = 3;
+            } else if(counter == 1){
+                scoreValue = 1;
+            }
+            counter++;
+
 
         }
     }

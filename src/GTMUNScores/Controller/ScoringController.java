@@ -72,7 +72,6 @@ public class ScoringController {
     }
 
     public ObservableList<String> getObservableList(ArrayList list) throws FileNotFoundException{
-        System.out.println(FXCollections.observableArrayList(list));
         return FXCollections.observableArrayList(list);
     }
 

@@ -51,9 +51,9 @@ public class ScoringAlgorithm {
             cCompiled.add(c);
 
         }
-        for(Committee c : cCompiled){
-            System.out.print(c.getTopToString());
-        }
+//        for(Committee c : cCompiled){
+//            System.out.print(c.getTopToString());
+//        }
     }
 
     public ArrayList<Committee> getAllCommittee(){

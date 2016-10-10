@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:controller = "GTMUNScores.Controller.MainScreenController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="welcomeLabel" layoutX="109.0" layoutY="14.0" text="Welcome to GTMUN Scoring">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Button fx:id="uploadFile" layoutX="109.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleUploadFile" text="Upload File">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="scoreFile" layoutX="371.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleScoreFile" text="Score Files">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
